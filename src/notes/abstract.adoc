@@ -45,22 +45,88 @@ Retour d'expérience de la mise à jour progressive de la console Clever Cloud (
 ** Mise à jour de notre client REST (pour le rendre dynamique)
 ** Mise en place d'ADR (ou de documents dans le genre)
 ** Tâche de size pr analyser l'impact
-**
+** ...
 * La suite ?
 
 == Abstract
 
 === FR
 
+Après avoir principalement connu des projets frontend from-scratch, je me suis confronté à un challenge différent : travailler sur la console d'admin de Clever Cloud.
+Une base de code "legacy" qui a plus de 10 ans, sans framework JS à la mode et qui n'a jamais connu de refonte big-bang.
+
+Comment fait-on pour introduire les outils et méthodes d'aujourd'hui dans une app legacy en prod sur laquelle on assure un support quotidien (bugfixs et nouvelles fonctionnalités) ?
+
+Depuis un an, nous avons développé une collection de Web Components avec LitElement que nous avons intégré dans différentes apps : jQuery, Vue.js, Play/Scala, ...
+Ils ont été développé dans un projet à part avec une méthode de conception/dev autour de Storybook.
+Nous essayons d'automatiser au mieux (i18n, feature branch preview, component API docs) et nous avons fait le choix de partager publiquement cet effort (code source, issues, docs, ADR).
+
+Durant cette session, je vous propose un retour d'expérience sur ce voyage de modernisation progressive : contexte, besoin, technos/méthodes mises en place, le positif/négatif...
 
 === EN
 
+After a lot of frontend jobs with projects started from-scratch, I encountered a different challenge: working on the admin console of Clever Cloud.
+A 10 years old legacy codebase, without any trendy JS framework that never had any big-bang refactor.
+
+How do you introduce new tools and methods in a legacy app running in production that you support on a daily basis (bugfixes and new features)?
+
+A year ago, we started a collection of Web Components using LitElement which we integrated in different apps: jQuery, Vue.js, Play/Scala, ...
+They've been developed in a separated project with a design/dev method around Storybook.
+We try to automate what we can (i18n, feature branch preview, component API docs) and we chose to publicly share this effort (source code, issues, docs, ADR).
+
+In this session, we'll see lessons learned from this progressive migration journey : context, requirements, tools/methods we introduced, pros/cons...
 
 == Message pour le comité
 
 === FR
 
+En décidant d'introduire des Web Components (avec LitElement) dans notre vieille web app legacy (jQuery), nous avons essuyé pas mal de plâtres.
+On a tenté des idées, mis en place des nouveaux outils, technos et méthodes.
+
+Dans cette session, j'ai envie de proposer un retour d'expérience et de partager ce qui a bien marché dans notre contexte pour inspirer des idées au public.
+À l'image d'une carte de randonnée avec plusieurs étapes, je m'arrêterai sur le pourquoi/comment des points les plus importants et intéressants de cette mise à jour progressive de legacy.
+Les points que j'aborderai en fonction de ce que le temps permet :
+
+* Web Components avec LitElement
+* Intégration de ces composants dans différent contextes (jQuery, Vue.js...)
+* Développement dans un Storybook à part avec feature branch preview auto
+* Génération auto de la doc de Web Component avec WCA
+* Comment on choisi nos dépendances tierces (polyfill, standards...)
+* Publication open source
+* i18n avec code analysis
+* Code-splitting + lazy loading par route (webpack)
+* Docs et ADR
 
 === EN
 
+When we decided to introduce Web Components (with LitElement) in our old legacy web app (jQuery), we went through a difficult journey.
+We tried many ideas and introduced new tools and methods.
+
+In this session, I want to propose a "lessons learned" kind of talk to share what worked and what didn't for our context to inspire some ideas to the audience.
+Just like a hiking map with different steps, I'll stop by the most important and interesting points of this progressive update with the why and the how.
+Here are the points I would address, depending on what the time allows:
+
+* Web Components with LitElement
+* Integrating those components in different contexts (jQuery, Vue.js...)
+* Developing them in a separated Storybook with auto feature branch preview
+* Web Component docs auto generated with WCA
+* How do we choose our third party dependencies (polyfill, standards...)
+* Published as open source
+* i18n with code analysis
+* Code-splitting + lazy loading by route (webpack)
+* Docs and ADR
+
 == Idées de titre
+
+REX : Faire du neuf avec du vieux, technos et méthodos modernes dans une web app legacy
+
+Lessons learned: Modern tools and methods in a legacy web app
+
+=== Autres
+
+REX : introduire des technos/méthodos d'aujourd'hui dans du code legacy d'hier
+REX : technos/méthodos modernes + base de code legacy = ❤
+REX : technos/méthodos modernes + base de code legacy = love
+Faire du vieux avec du neuf : technos/méthodos modernes dans une base legacy
+REX : Faire du neuf avec du vieux, technos/méthodos modernes dans une base legacy
+REX : Faire du neuf avec du vieux, technos/méthodos Web modernes dans une base legacy
