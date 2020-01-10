@@ -1,0 +1,66 @@
+= Abstract
+
+== Problèmes constatés
+
+* J'ai beaucoup bossé sur des projets qui démarrent "from scratch" où tous les choix techniques sont ouverts et possibles, sans contraintes (ou très peu). Du coup, quand on se retrouve face à une codebase front qui a plus de 7 ans, comment peut-on mettre à jour une partie de la stack sans faire de big bang où on réécrit tout.
+* J'ai assisté à beaucoup de conférences frontend qui me parlent de nouvelles technos/outils/fwks mais rarement dans un contexte de migration en cours de route. Le plus souvent, le contexte est "voici un nouveau truc qui brille pour ton nouveau projet".
+* J'ai assisté à beaucoup de conférences où on m'explique comment fonctionne une techno mais pas forcément comment telle personne l'utilise en prod dans la vraie vie.
+
+== Conclusion
+
+Ajouter des technos/outils modernes et adopter de nouvelles méthodes/approches dans les contraintes du legacy, c'est possible et c'est très enrichissant intellectuellement.
+
+== Take away
+
+Une personne qui a suivi la présentation repart avec :
+
+* Des idées/approches de comment mettre à jour une partie de la stack d'une webapp legacy en prod.
+* Une méthode pour développer des composants UI bas/haut niveau (penser I/O, docs, tous les états, découplage).
+* Un outil et une approche pour découpler ses composants du contexte d'utilisation (storybook).
+* Une conviction que les Web Components en prod ça marche et un aperçu des avantages inconvénients.
+
+== Déroulé simplifié
+
+Retour d'expérience de la mise à jour progressive de la console Clever Cloud (technique et fonctionnelle).
+
+* Bonjour à tous
+* Notre contexte
+* Notre besoin
+* Les solutions et méthodos mises en place : voyage à travers nos aventures
+** Adoption des Web Components avec LitElement
+*** Minification (pb avec les variables privées)
+** ESlint (on devrait péter au commit)
+** Intégration de ces composants dans du legacy jQuery et du Vue.js
+*** pb des raccourcis clavier et du routeur (un jour du password manager)
+** Mise en place de Storybook
+*** Méthodo de Storybook Driven Development (story puis dev, penser à tous les cas)
+*** Penser a11y, responsive et i18n
+** Génération auto de la doc d'interface de nos composants avec WCA
+** Démarche de choix de dépendance et polyfill et standard etc...
+** Feature branches du Storybook
+** Mise en OSS du Storybook
+** Maj du système de i18n
+*** i18n-extract, code analysis
+** Mise en place de code-splitting et de lazy loading des routes (webpack)
+** Mise à jour de notre client REST (pour le rendre dynamique)
+** Mise en place d'ADR (ou de documents dans le genre)
+** Tâche de size pr analyser l'impact
+**
+* La suite ?
+
+== Abstract
+
+=== FR
+
+
+=== EN
+
+
+== Message pour le comité
+
+=== FR
+
+
+=== EN
+
+== Idées de titre
